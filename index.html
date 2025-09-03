@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Little Bubbles Maya 💙</title>
+    <link rel="stylesheet" href="Style3.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="floating-bubbles">
+      <div class="bubble bubble-1"></div>
+      <div class="bubble bubble-2"></div>
+      <div class="bubble bubble-3"></div>
+      <div class="bubble bubble-4"></div>
+      <div class="bubble bubble-5"></div>
+      <div class="bubble bubble-6"></div>
+    </div>
+    
+    <div class="powerpuff-stars">
+      <div class="star star-1">⭐</div>
+      <div class="star star-2">✨</div>
+      <div class="star star-3">💫</div>
+      <div class="star star-4">⭐</div>
+    </div>
+
+    <div class="envelope">
+      <div class="back"></div>
+      <div class="letter">
+        <div class="bubbles-image">
+          <img src="bubbles.png" alt="Bubbles" class="bubbles-png">
+        </div>
+        <div class="text">
+          <p class="maya-message">
+            To my little Bubbles Maya,<br />
+            You're as sweet and adorable<br />
+            as Bubbles herself! 💙
+            I made this just for you ✨
+          </p>
+          <a href="#" class="cute-button" onclick="playClickSound(event)">💌 Something Important 💌</a>
+        </div>
+      </div>
+      <div class="front"></div>
+      <div class="top"></div>
+      <div class="shadow"></div>
+      <div class="text1">
+        <h2>Hey Maya! I Have Something Special For You! 💙✨</h2>
+        <p class="subtitle">Just like Bubbles, you make everything brighter!</p>
+      </div>
+    </div>
+    
+    <script>
+      function playClickSound(event) {
+        // Prevent default link behavior
+        event.preventDefault();
+        
+        try {
+          // Play your custom sound file
+          const audio = new Audio('Voicy_They Are Beautiful.mp3');
+          audio.volume = 0.7; // Adjust volume as needed
+          audio.play();
+          
+          // Navigate after sound plays
+          setTimeout(() => {
+            window.location.href = 'special-message.html';
+          }, 2000); // Longer delay to let the sound play
+          
+        } catch (error) {
+          console.log('Sound file not found, navigating directly');
+          // If sound fails, still navigate
+          window.location.href = 'special-message.html';
+        }
+      }
+    </script>
+  </body>
+</html>

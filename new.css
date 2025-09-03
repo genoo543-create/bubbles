@@ -1,0 +1,296 @@
+body {
+  font-family: 'Bubblegum Sans', cursive;
+  background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 30%, #E0F6FF 70%, #FFF9C4 100%);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.bubbles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(135, 206, 250, 0.3));
+  box-shadow: 
+    inset 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 25px rgba(135, 206, 250, 0.3);
+  animation: bubbleFloat 12s infinite ease-in-out;
+}
+
+.bubble-1 { width: 80px; height: 80px; left: 5%; animation-delay: 0s; }
+.bubble-2 { width: 60px; height: 60px; left: 85%; animation-delay: 3s; }
+.bubble-3 { width: 100px; height: 100px; left: 15%; animation-delay: 6s; }
+.bubble-4 { width: 45px; height: 45px; left: 75%; animation-delay: 9s; }
+.bubble-5 { width: 70px; height: 70px; left: 50%; animation-delay: 12s; }
+
+@keyframes bubbleFloat {
+  0% {
+    bottom: -150px;
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% {
+    bottom: 120vh;
+    transform: translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animation-box {
+  width: 90%;
+  max-width: 1200px;
+  height: 100vh;
+  background: rgba(135, 206, 250, 0.1);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.first-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4rem;
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  opacity: 0;
+  animation-name: topFadeOut;
+  animation-duration: 5s;
+  color: #1976D2;
+  text-shadow: 
+    0 0 10px rgba(25, 118, 210, 0.5),
+    0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.second-text {
+  font-size: 2.8rem;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  opacity: 0;
+  animation-name: rightFadeInOut;
+  animation-delay: 4s;
+  animation-duration: 6s;
+  color: #42A5F5;
+  text-shadow: 0 2px 4px rgba(66, 165, 245, 0.4);
+  text-align: right;
+}
+
+.third-text {
+  transform: rotate(-5deg);
+  font-size: 2.2rem;
+  position: absolute;
+  left: 10%;
+  top: 35%;
+  opacity: 0;
+  animation-name: topFadeOutVertical;
+  animation-delay: 8s;
+  animation-duration: 6s;
+  color: #FF6B9D;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(255, 107, 157, 0.4);
+}
+
+.fourth-text {
+  font-size: 2.6rem;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  opacity: 0;
+  color: #E91E63;
+  animation-name: fadeInOut;
+  animation-delay: 12s;
+  animation-duration: 8s;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(233, 30, 99, 0.4);
+}
+
+.fifth-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3.5rem;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 20%;
+  opacity: 0;
+  color: #FFD54F;
+  animation-name: bottomFadeOut;
+  animation-delay: 18s;
+  animation-duration: 8s;
+  text-align: center;
+  text-shadow: 
+    0 0 15px rgba(255, 213, 79, 0.6),
+    0 2px 4px rgba(255, 193, 7, 0.4);
+}
+
+.final-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #1976D2;
+  animation-name: finalMessage;
+  animation-delay: 25s;
+  animation-duration: 10s;
+  text-align: center;
+  text-shadow: 
+    0 0 20px rgba(25, 118, 210, 0.8),
+    0 4px 8px rgba(25, 118, 210, 0.4);
+  animation-fill-mode: forwards;
+}
+
+@keyframes topFadeOut {
+  0% {
+    top: -5%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes bottomFadeOut {
+  0% {
+    bottom: -10%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes topFadeOutVertical {
+  0% {
+    top: -5%;
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.9);
+  }
+}
+
+@keyframes rightFadeInOut {
+  0% {
+    right: -20%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20% {
+    right: 5%;
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes finalMessage {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .first-text { font-size: 2.5rem; }
+  .second-text { font-size: 2rem; }
+  .third-text { font-size: 1.8rem; }
+  .fourth-text { font-size: 2rem; }
+  .fifth-text { font-size: 2.5rem; }
+  .final-text { font-size: 3rem; }
+}
+
+@media (max-width: 480px) {
+  .first-text { font-size: 2rem; left: 2%; }
+  .second-text { font-size: 1.5rem; right: 2%; }
+  .third-text { font-size: 1.4rem; left: 2%; }
+  .fourth-text { font-size: 1.6rem; left: 5%; right: 5%; }
+  .fifth-text { font-size: 2rem; left: 5%; right: 5%; }
+  .final-text { font-size: 2.2rem; }
+}
